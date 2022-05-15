@@ -15,14 +15,9 @@ export class Potter {
         for (let pack = 0; pack < qtyOfPacksBySize.length; pack++) {
             if (qtyOfPacksBySize[pack] > 0) {
                 let numberOfBooksInPack = pack + 1;
-
                 let applicableDiscount = this.discounts[pack];
-
                 let subtotal = numberOfBooksInPack * this.price;
-
-                let discountedPriceForPack =
-                    subtotal - subtotal * applicableDiscount;
-
+                let discountedPriceForPack = subtotal - subtotal * applicableDiscount;
                 total += qtyOfPacksBySize[pack] * discountedPriceForPack;
             }
         }
