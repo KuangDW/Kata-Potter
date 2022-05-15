@@ -32,4 +32,6 @@ describe('Harry Potter book kata', function() {
     expect(potter.checkout()).toBe(24);
   });
 
+  
+
 });
