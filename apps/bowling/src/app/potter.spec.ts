@@ -31,7 +31,51 @@ describe('Harry Potter book kata', function() {
     potter.addToBasket(book);
     expect(potter.checkout()).toBe(24);
   });
+  test('...buying two different books results in a 5% discount', function() {
+    const potter = new Potter();
+    const book = potter.createBook(1);
+    const book2 = potter.createBook(2);
+    potter.addToBasket(book);
+    potter.addToBasket(book2);
+    expect(potter.checkout()).toBe(15.2);
+  });
 
-  
+  test('...buying three different books results in a 10% discount', function() {
+    const potter = new Potter();
+    const book = potter.createBook(1);
+    const book2 = potter.createBook(2);
+    const book3 = potter.createBook(3);
+    potter.addToBasket(book);
+    potter.addToBasket(book2);
+    potter.addToBasket(book3);
+    expect(potter.checkout()).toBe(21.6);
+  });
 
+  test('...buying four different books results in a 20% discount', function() {
+    const potter = new Potter();
+    const book = potter.createBook(1);
+    const book2 = potter.createBook(2);
+    const book3 = potter.createBook(3);
+    const book4 = potter.createBook(4);
+    potter.addToBasket(book);
+    potter.addToBasket(book2);
+    potter.addToBasket(book3);
+    potter.addToBasket(book4);
+    expect(potter.checkout()).toBe(25.6);
+  });
+
+  test('...buying five different books results in a 25% discount', function() {
+    const potter = new Potter();
+    const book = potter.createBook(1);
+    const book2 = potter.createBook(2);
+    const book3 = potter.createBook(3);
+    const book4 = potter.createBook(4);
+    const book5 = potter.createBook(5);
+    potter.addToBasket(book);
+    potter.addToBasket(book2);
+    potter.addToBasket(book3);
+    potter.addToBasket(book4);
+    potter.addToBasket(book5);
+    expect(potter.checkout()).toBe(30);
+  });
 });
