@@ -78,4 +78,25 @@ describe('Harry Potter book kata', function() {
     potter.addToBasket(book5);
     expect(potter.checkout()).toBe(30);
   });
+
+  test("...example in the readme -  2 copies of the first book + 2 copies of the second book + 2 copies of the third book + 1 copy of the fourth book + 1 copy of the fifth book = 51.60", function() {
+
+    const potter = new Potter();
+    const book = potter.createBook(1);
+    const book2 = potter.createBook(2);
+    const book3 = potter.createBook(3);
+    const book4 = potter.createBook(4);
+    const book5 = potter.createBook(5);
+
+    potter.addToBasket(book);
+    potter.addToBasket(book);
+    potter.addToBasket(book2);
+    potter.addToBasket(book2);
+    potter.addToBasket(book3);
+    potter.addToBasket(book3);
+    potter.addToBasket(book4);
+    potter.addToBasket(book5);
+
+    expect(potter.checkout()).toBe(51.60);
+});
 });
