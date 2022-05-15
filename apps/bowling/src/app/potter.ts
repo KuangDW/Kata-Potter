@@ -5,8 +5,10 @@ class Book {
 export class Potter {
     basket: Book[] = [];
 
+    price = 8;
+
     checkout(): number {
-        return 8;
+        return this.price * this.basket.length
     }
 
     createBook(bookNumber: number): Book {
